@@ -16,12 +16,18 @@
     --header-bg-color: #f5f5f5;
     --header-margin: 15px auto;
     --header-width: 90%;
-    --header-text-align: center; 
+    --header-text-align: center;
 
     /* MAIN CONTENT */
-    --main-width: 90%;
-    --main-height: 90%;
-   
+    --main-width: 100%;
+    --main-height: auto;
+    --main-margin: 0 auto;
+
+    /* SECTION ADICIONAR-TAREFAS */
+    --adicionar-tarefas-margin: 15px auto 0px auto;
+    --adicionar-tarefas-width: 50%;
+    --adicionar-tarefas-text-align: center;
+
 
 }
 
@@ -40,6 +46,7 @@ body {
 
 .header {
 
+    border: 1px solid black;
     font-weight: normal;
     color: var(--header-color);
     background-color: var(--header-bg-color);
@@ -53,11 +60,30 @@ body {
 
     width: var(--main-width);
     height: var(--main-height);
-    
+    margin: var(--main-margin);
+
 
 }
+
+.adicionar-tarefas {
+
+    margin: var(--adicionar-tarefas-margin);
+    width: var(--adicionar-tarefas-width);
+    height: 30px;
+    text-align: var(--adicionar-tarefas-text-align);
+    display: flex;
+
+}
+
+.input-tarefas {
+    
+    flex-grow: 1;
+
+}
+
+
 /* 
 
 .footer {
 
-}*/ 
+}*/

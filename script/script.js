@@ -2,13 +2,14 @@ const input = document.querySelector(".input-tarefas");
 const button = document.querySelector("#myButton");
 const list = document.querySelector(".tarefas ul");
 
+
+const tarefasGuardada = localStorage.getItem("tarefa");
+
 function lp() {
   if (input.value === "") {
     window.alert("Por Favor Digite Uma Tarefa");
     return;
   }
-
-  
 
   const newList = document.createElement("li");
   const deleteButton = document.createElement("button");
@@ -21,20 +22,18 @@ function lp() {
     newList.classList.toggle("concluido");
   });
 
-  deleteButton.addEventListener('click', function() {
-    newList.remove()
-  })
+  deleteButton.addEventListener("click", function () {
+    newList.remove();
+  });
 
   newList.appendChild(deleteButton);
   
+  localStorage.setItem("tarefa", input.value);
+
   list.appendChild(newList);
 
   input.value = "";
-
   
 }
-
-localStorage.setItem("tarefa", input.value)
-const tarefasGuardada = localStorage.getItem("tarefa");
 
 button.addEventListener("click", lp);
